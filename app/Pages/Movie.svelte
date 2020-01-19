@@ -9,12 +9,17 @@
 
     </actionBar>
 
-    <scrollView orientation="vertical">
-        <stackLayout>
-            <stackLayout height="500px">
-                <image src='{movie.Image}' stretch="aspectFill"></image>
+    <scrollView>
+        <stackLayout backgroundColor="#4169e1">
+            <stackLayout backgroundColor="white">
+                <videoPlayer
+                        src="{movie.Video}"
+                        autoplay="true"
+                        VerticalAlignment="top"
+                        height="200"
+                        margin="8"></videoPlayer>  
             </stackLayout>
-            <stackLayout class="p-20" >
+            <stackLayout class="p-20" backgrounColor="#4169e1" >
                 <label textWrap="true" heigth="auto" marginBottom="20px">
                 {movie.Description}
                 </label>
@@ -26,8 +31,7 @@
                 </gridLayout>
 
                 <button class="c-button" on:tap={addTicket}>Een ticket bestellen</button>
-                <!-- <youtubeplayer src="https://youtu.be/GphjcjVHg9M" apiKey="AIzaSyCDH3BGQZT2ebUfSE8D3I8NLqaCPu4FRh0"/> -->
-                <label>yikes</label>
+            </stackLayout>
         </stackLayout>
 
     </scrollView>
@@ -73,8 +77,6 @@
             }
         })
     }
-
-    
     
 
 </script>
@@ -89,4 +91,5 @@
     width:100%;
     margin-top: 16px;
     }
+
 </style>

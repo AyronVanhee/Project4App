@@ -13,12 +13,9 @@
         <label textWrap="true" heigth="auto">
         De bedoeling van deze app is om een basis versie te maken van de website waarbij ik ga kijken naar de native elementen. 
         </label>
-        <!-- <stackLayout class="p-20">
-            <image src="~/Images/logo.png"></image>
-            <videoPlayer:video id="nativeVideoPlayer"
-                    controls="true" loop="true" autoplay="false" height="280"
-                    src="~/Images/film.mp4"></videoPlayer:video>
-        </stackLayout> -->
+        <label>
+        Plugins:</label>
+        <label>Video Player</label>
     </stackLayout>
 
 </page>
@@ -31,22 +28,6 @@
     import { Video } from 'nativescript-videoplayer';
 
     import { registerNativeViewElement } from 'svelte-native/dom'
-
-    //const video = topmost().currentPage.getViewById('nativeVideoPlayer') as Video;
-    // Setting event listeners on the Video
-    // video.on(Video.pausedEvent, () => {
-    // console.log('Video has been paused.');
-    // });
-    
-    // video.on(Video.mutedEvent, () => {
-    // console.log('Video has been muted.');
-    // });
-    
-    // // changing the src
-    // video.src = 'some video file or url';
-    
-    // // set loop
-    // video.loop = false;
       
     function GoHome(){
         navigate({

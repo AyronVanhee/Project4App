@@ -8,15 +8,11 @@
         text="About" android.position="popup"></actionItem>
     </actionBar>
 
-
-
     <bottomNavigation selectedIndex="0">
 
     <tabStrip backgroundColor="white">
         <tabStripItem height="auto" margin="0" padding="0">
             <label text="Home"></label>
-
-            <Home />
         </tabStripItem>
         <tabStripItem >
             <label text="About"></label>
@@ -52,7 +48,12 @@
 
     import { navigate } from 'svelte-native';
     import { Template } from 'svelte-native/components';
-      
+    import { alert } from 'tns-core-modules/ui/dialogs';
+    import { connectionType, getConnectionType, startMonitoring, stopMonitoring }from "tns-core-modules/connectivity";
+
+
+        let connectionTypeString;
+
 
     function GoAbout(){
         navigate({
@@ -60,6 +61,45 @@
         })
     }
 
+
+   
+    const type=getConnectionType();
+
+    switch (type) {
+        case connectionType.none:
+            console.log("No connection");
+            connectionTypeString = "No Internet connectivity";
+            break;
+        case connectionType.wifi:
+            console.log("WiFi connection");
+            connectionTypeString = "WiFI connectivity";
+            break;
+        case connectionType.mobile:
+            console.log("Mobile connection");
+            connectionTypeString = "Mobile connectivity";
+            break;
+        case connectionType.ethernet:
+            console.log("Ethernet connection");
+            connectionTypeString = "Ethernet connectivity";
+            break;
+        case connectionType.bluetooth:
+            console.log("Bluetooth connection");
+            connectionTypeString = "Bluetooth connectivity";
+            break;
+        default:
+            break;
+    }
+
+
+    console.log(connectionTypeString)
+
+        alert({
+            title: "Internet",
+            message: 'Deze app is offline te gebruiken maar voor videos heb je internet nodig, internet status: ' + connectionTypeString,
+            okButtonText: "Verder"
+        }).then(() => {
+            console.log("Alert dialog closed")
+        })
     
 
 </script>
