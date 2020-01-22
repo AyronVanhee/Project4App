@@ -30,3 +30,8 @@ page{
     margin-left:8px;
     height:80px;
 }
+
+.c-title {
+    font-size: 18px;
+    font-weight: bold;
+  }

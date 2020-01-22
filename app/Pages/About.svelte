@@ -5,6 +5,7 @@
         text="Home" android.position="popup"></actionItem>
     </actionBar>
 
+<scrollView>
     <stackLayout class="p-20" >
         <label class="c-title">About</label>
         <label textWrap="true" heigth="auto">
@@ -13,11 +14,15 @@
         <label textWrap="true" heigth="auto">
         De bedoeling van deze app is om een basis versie te maken van de website waarbij ik ga kijken naar de native elementen. 
         </label>
+        <label textWrap="true" heigth="auto">
+        Deze app is offline te gebruiken. Het enige dat gebruik maakt van internet zijn de trailer videos.
+        </label>
         <label>
-        Plugins:</label>
+        Plugins:
+        </label>
         <label>Video Player</label>
     </stackLayout>
-
+</scrollView>
 </page>
 
 <script>
